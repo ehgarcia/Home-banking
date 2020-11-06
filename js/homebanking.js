@@ -8,7 +8,6 @@ var luz = 210;
 var internet = 570;
 var cuentaAmiga1 = 1234567;
 var cuentaAmiga2 = 7654321;
-var codeSeguridad = 1620;
 var saldoPrestamo = 0;
 
 //Declaracion de funciones
@@ -54,7 +53,6 @@ function check(servicio) {
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
 window.onload = function() {
-  iniciarSesion();
   cargarNombreEnPantalla();
   actualizarSaldoEnPantalla();
   actualizarLimiteEnPantalla();
@@ -205,24 +203,6 @@ function solicitarPrestamo() {
       "\nSaldo Actual: $" +
       saldoCuenta
   );
-}
-
-function iniciarSesion() {
-  var sesion = prompt(
-    "Por favor, ingrese el codigo de seguridad para iniciar sesion"
-  );
-  var sesion_2 = parseInt(sesion);
-  if (sesion_2 === codeSeguridad) {
-    alert(
-      "Bienvenido/a " +
-        nombreUsuario +
-        " ya puedes empezar a realizar operaciones"
-    );
-  } else {
-    alert("El codigo de seguridad es incorrecto");
-    saldoCuenta = 0;
-    actualizarSaldoEnPantalla();
-  }
 }
 
 //Funciones que actualizan el valor de las variables en el HTML
